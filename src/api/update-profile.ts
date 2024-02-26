@@ -1,14 +1,10 @@
 import { api } from '@/lib/axios'
 
-interface UpdateProfileBody {
+export interface UpdateProfileBody {
   name: string
   description: string | null
 }
 
-export async function UpdateProfile({ name, description }: UpdateProfileBody) {
-  await new Promise((resolve, reject) => {
-    setTimeout(reject, 3000)
-  })
-
+export async function updateProfile({ description, name }: UpdateProfileBody) {
   await api.put('/profile', { name, description })
 }

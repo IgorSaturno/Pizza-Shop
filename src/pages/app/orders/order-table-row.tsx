@@ -121,10 +121,10 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
       <TableCell>
         {order.status === 'pending' && (
           <Button
-            onClick={() => approveOrderFn({ orderId: order.orderId })}
-            disabled={isApprovingOrder}
             variant="outline"
+            disabled={isApprovingOrder}
             size="xs"
+            onClick={() => approveOrderFn({ orderId: order.orderId })}
           >
             <ArrowRight className="mr-2 h-3 w-3" />
             Aprovar
@@ -133,10 +133,10 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
 
         {order.status === 'processing' && (
           <Button
-            onClick={() => dispatchOrderFn({ orderId: order.orderId })}
-            disabled={isDispatchingOrder}
             variant="outline"
+            disabled={isDispatchingOrder}
             size="xs"
+            onClick={() => dispatchOrderFn({ orderId: order.orderId })}
           >
             <ArrowRight className="mr-2 h-3 w-3" />
             Em entrega
@@ -145,10 +145,10 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
 
         {order.status === 'delivering' && (
           <Button
-            onClick={() => deliverOrderFn({ orderId: order.orderId })}
-            disabled={isDeliveringOrder}
             variant="outline"
+            disabled={isDeliveringOrder}
             size="xs"
+            onClick={() => deliverOrderFn({ orderId: order.orderId })}
           >
             <ArrowRight className="mr-2 h-3 w-3" />
             Entregue
